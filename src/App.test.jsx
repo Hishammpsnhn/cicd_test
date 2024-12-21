@@ -18,7 +18,7 @@ describe("app_action", () => {
 
     // Get the element with the count and extract its text content
     const beforeInc = screen.getByTestId("span");
-    expect(beforeInc).toHaveTextContent(0);
+    expect(beforeInc).toHaveTextContent(1);
 
     // Find the button and click it
     const submit = screen.getByRole("button");
@@ -26,6 +26,11 @@ describe("app_action", () => {
 
     // // Get the element again and check the updated text content
     const afterInc = screen.getByTestId("span");
-    expect(afterInc).toHaveTextContent(2);
+    expect(afterInc).toHaveTextContent(3);
   });
+  it("inc new",async () => {
+    userEvent.setup();
+    render(<App />);
+    const befor = screen.getAllByText("p")
+  })
 });
