@@ -7,6 +7,7 @@ function App() {
     <>
       <span data-testid ="span">{count}</span>
       <button onClick={() => setCount((prev)=>prev+2)}>Increment</button>
+      <p>Hello</p>
     </>
   );
 }
