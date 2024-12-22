@@ -9,12 +9,15 @@ on:
     - master
 
 jobs:
+  # build is used for creating enviroments and  organize the steps
   build:
     runs-on: self-hosted
+    # specify the os for the job runner
+    
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    steps: # a sequence of action to be performed 
+    - name: Checkout code # name is user for clearify the name of the stpe in ui
+      uses: actions/checkout@v3 #clone the repository to the on to the runner
     
     - name: Setup Nodejs
       uses: actions/setup-node@v3
