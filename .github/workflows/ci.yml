@@ -29,3 +29,18 @@ jobs:
 
     - name: Run tests
       run: npm test
+
+    - name : login to docker
+      run : docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build Docker image
+      run: docker build -t cicd_test .
+
+    - name: Tag Docker image
+      run: docker tag cicd_test:latest hishammpsn/cicd_test:latest
+
+    - name: Push Docker image to Docker Hub
+      run: docker push hishammpsn/cicd_test:latest
