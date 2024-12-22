@@ -7,12 +7,13 @@ on:
   pull_request:
     branches:
     - master
-# job is used for creating the workflow
+
 jobs:
   # build is used for creating enviroments and  organize the steps
   build:
+    runs-on: self-hosted
     # specify the os for the job runner
-    runs-on: ubuntu-latest
+    
 
     steps: # a sequence of action to be performed 
     - name: Checkout code # name is user for clearify the name of the stpe in ui
